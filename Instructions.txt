@@ -1,0 +1,502 @@
+# Offline Spotify (MP4 Edition)
+# instructions.txt
+
+==========================================================
+PROJECT GOAL
+==========================================================
+
+Build a desktop application that looks almost identical to Spotify but works completely offline.
+
+The application will play ONLY local MP4 files stored inside a folder named `songs`.
+
+The UI must match the design provided in `index.html`.
+
+Do NOT redesign the interface.
+
+==========================================================
+READ FIRST
+==========================================================
+
+Before writing ANY code:
+
+1. Read index.html completely.
+2. Read this instructions.txt completely.
+3. Inspect the current project.
+4. Explain your implementation plan briefly.
+5. Only then begin coding.
+
+Never skip these steps.
+
+==========================================================
+DESIGN RULES
+==========================================================
+
+index.html is the ONLY design reference.
+
+Follow it exactly.
+
+Do NOT
+
+- redesign
+- modernize
+- simplify
+- replace layouts
+- invent components
+
+Match:
+
+• spacing
+• typography
+• colors
+• sidebar sizes
+• player
+• cards
+• animations
+• rounded corners
+• hover effects
+
+==========================================================
+PROJECT STRUCTURE
+==========================================================
+
+The project should be organized like this.
+
+Project/
+
+│
+├── index.html
+├── instructions.txt
+├── library.json
+├── songs/
+│      *.mp4
+│
+├── assets/
+│      icons/
+│      images/
+│
+├── css/
+│      style.css
+│
+├── js/
+│
+│   app.js
+│   ui.js
+│   player.js
+│   scanner.js
+│   library.js
+│   search.js
+│   shortcuts.js
+│   thumbnail.js
+│   settings.js
+│
+└── cache/
+       thumbnails/
+
+Only create additional files if absolutely necessary.
+
+Never create unnecessary folders.
+
+==========================================================
+SUPPORTED FILES
+==========================================================
+
+Only support:
+
+.mp4
+
+Ignore every other file type.
+
+==========================================================
+SONGS FOLDER
+==========================================================
+
+Create a folder named
+
+songs
+
+The user will place MP4 files into this folder.
+
+Every time the application starts it must
+
+• scan the songs folder
+• detect new videos
+• remove deleted videos
+• update library.json automatically
+
+No manual refresh button.
+
+==========================================================
+LIBRARY
+==========================================================
+
+Maintain
+
+library.json
+
+This file stores information about every discovered MP4.
+
+Example fields
+
+id
+
+filename
+
+title
+
+path
+
+duration
+
+thumbnail
+
+favorite
+
+playCount
+
+lastPlayed
+
+The application should automatically synchronize this file every startup.
+
+==========================================================
+WORKFLOW
+==========================================================
+
+VERY IMPORTANT
+
+Never build the whole application in one step.
+
+Build one feature.
+
+Test it.
+
+Fix errors.
+
+Then continue.
+
+Never continue if the current feature is broken.
+
+==========================================================
+IMPLEMENTATION ORDER
+==========================================================
+
+Build the project in EXACTLY this order.
+
+--------------------------------------------------
+
+STEP 1
+
+Project structure
+
+Create folders
+
+Create required files
+
+Nothing else.
+
+Verify project runs.
+
+STOP.
+
+--------------------------------------------------
+
+STEP 2
+
+Build UI only.
+
+Implement
+
+Top Navigation
+
+Left Sidebar
+
+Main Area
+
+Right Sidebar
+
+Bottom Player
+
+Use placeholder data.
+
+No playback.
+
+No scanning.
+
+No search.
+
+Verify UI renders correctly.
+
+STOP.
+
+--------------------------------------------------
+
+STEP 3
+
+Implement MP4 playback.
+
+Play
+
+Pause
+
+Seek
+
+Volume
+
+Progress bar
+
+Current time
+
+Duration
+
+Previous
+
+Next
+
+Verify playback works.
+
+STOP.
+
+--------------------------------------------------
+
+STEP 4
+
+Implement automatic library scanning.
+
+Scan
+
+songs/
+
+Generate
+
+library.json
+
+Verify scan works.
+
+STOP.
+
+--------------------------------------------------
+
+STEP 5
+
+Implement search.
+
+Use library.json.
+
+Requirements
+
+Instant search
+
+Real-time filtering
+
+Case insensitive
+
+Partial matching
+
+Verify search works.
+
+STOP.
+
+--------------------------------------------------
+
+STEP 6
+
+Implement video thumbnails.
+
+Generate thumbnails.
+
+Cache them.
+
+Verify thumbnails display.
+
+STOP.
+
+--------------------------------------------------
+
+STEP 7
+
+Implement keyboard shortcuts.
+
+Space
+
+Play Pause
+
+Left Arrow
+
+-10 seconds
+
+Right Arrow
+
++10 seconds
+
+0
+
+Jump to beginning
+
+1
+
+10%
+
+2
+
+20%
+
+3
+
+30%
+
+4
+
+40%
+
+5
+
+50%
+
+6
+
+60%
+
+7
+
+70%
+
+8
+
+80%
+
+9
+
+90%
+
+Verify every shortcut works.
+
+STOP.
+
+--------------------------------------------------
+
+STEP 8
+
+Implement
+
+Recently Played
+
+Favorites
+
+Play Count
+
+Resume Position
+
+Verify everything works.
+
+STOP.
+
+==========================================================
+SEARCH
+==========================================================
+
+Search should use
+
+library.json
+
+Search by filename.
+
+Real-time.
+
+No lag.
+
+Partial matching.
+
+Case insensitive.
+
+==========================================================
+PLAYER
+==========================================================
+
+Support
+
+Play
+
+Pause
+
+Previous
+
+Next
+
+Seek
+
+Volume
+
+Mute
+
+Fullscreen
+
+==========================================================
+PERFORMANCE
+==========================================================
+
+Support large libraries.
+
+Avoid rescanning unnecessarily.
+
+Lazy load where appropriate.
+
+Keep UI smooth.
+
+==========================================================
+TESTING
+==========================================================
+
+After EVERY implementation step
+
+Verify
+
+✓ No console errors
+
+✓ No broken UI
+
+✓ No missing imports
+
+✓ No missing files
+
+✓ Feature works correctly
+
+If something is broken
+
+FIX IT
+
+before continuing.
+
+==========================================================
+RULES
+==========================================================
+
+DO NOT
+
+• create unnecessary files
+
+• over-engineer
+
+• implement future steps early
+
+• redesign UI
+
+• ignore instructions
+
+• continue when something is broken
+
+==========================================================
+WHEN FINISHED
+==========================================================
+
+At the end of EACH step
+
+Explain
+
+• what was implemented
+
+• which files changed
+
+• how it was tested
+
+Then STOP and wait for the next instruction.
+
+Never continue automatically.
